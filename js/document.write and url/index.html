@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <p id="rofl">
+        qqqq
+    </p>
+    <b>
+        <script>
+            let a ='qwe eeee';
+            document.write(a);
+        </script>
+    </b>
+    <script>
+        document.write('Количсевтво символов = ' + String(a.length));
+        document.write('Количество слов = ' + String(a.split(' ').length));
+    </script>
+    <div>
+        <script>
+            let url = document.location.href;
+            document.write('<p id="qwe">' + url + '</p>');
+            let protocol = document.getElementById('qwe').innerText.split(':')[0];
+            document.write('Протокол = ' + protocol + '<br>');
+            let file_name = document.location.pathname.split('/')[document.location.pathname.split('/').length - 1];
+            document.write('Имя файла = ' + file_name + '<br>');
+            document.write('Расширение = ' + file_name.split('.')[1] + '<br>');
+            let all_parameters = document.location.href.split('?')[1];
+            let parameters = {};
+            all_parameters.split('&').reduce((acc, el)=> {
+                [key, value] = el.split('=');
+                parameters[key] = value;
+            }, {});
+			document.write('Отправьте гет параметр "a"' + '<br>');
+            document.write('Первый параметр = ' + parameters['a'] + '<br>');
+        </script>
+    </div>
+    <div>
+        <script>
+            let types = ['text', 'password', 'image', 'file'];
+            let inputs = [];
+            for (let i=0; i<4; i++){
+                inputs[i] = document.createElement('input');
+                inputs[i].type = types[i];
+            }
+            for (let i=1; i<11; i++){
+                document.write('<form id=form_id_' + i + ' name=form_' + i + '></form>');
+                let rand = Math.floor(Math.random() * (5 - 2)) + 2;
+                for (let j=0; j<rand; j++){
+                    document.getElementById('form_id_' + i).appendChild(inputs[j].cloneNode());
+                }
+                let button_show_name = document.createElement('button');
+                button_show_name.type = 'button';
+                button_show_name.innerHTML = '<img alt="name" src="https://img.icons8.com/officel/16/000000/circled-left.png"><div>Показать имя формы</div>';
+                button_show_name.onclick = function () {
+                    alert(button_show_name.getElementsByTagName('div')[0].innerText);
+                };
+                let button_show_parent = document.createElement('button');
+                button_show_parent.type = 'button';
+                button_show_parent.innerHTML = '<img alt="parent" src="https://img.icons8.com/dusk/64/000000/up-squared.png"><div>Принадлежность</div>';
+                button_show_parent.onclick = function () {
+                    alert('form_id_' + i);
+                };
+                let button_clear = document.createElement('button');
+                button_clear.type = 'button';
+                button_clear.innerHTML = '<img alt="clear" src="https://img.icons8.com/ios/50/000000/circled-left.png"><div>Очистить</div>';
+                //button_clear.innerText = 'Очистить';
+                button_clear.onclick = function () {
+                    let id = 'form_id_' + i;
+                    for(let j=0; j<document.getElementById(id).childElementCount; j++){
+                        if (document.getElementById('form_id_' + i).children[j].type != 'button'){
+                            document.getElementById('form_id_' + i).children[j].value = '';
+                        }
+                    }
+                };
+                let button_show_number = document.createElement('button');
+                button_show_number.type = 'button';
+                button_show_number.innerHTML = '<img alt="number" src="https://img.icons8.com/cute-clipart/64/000000/up-squared.png"><div>Показать количество полей</div>';
+                button_show_number.onclick = function () {
+                    alert(document.getElementById('form_id_' + i).childElementCount);
+                };
+                document.getElementById('form_id_' + i).appendChild(button_show_name);
+                document.getElementById('form_id_' + i).appendChild(button_show_parent);
+                document.getElementById('form_id_' + i).appendChild(button_clear);
+                document.getElementById('form_id_' + i).appendChild(button_show_number);
+            }
+            for (let i=1; i <= document.getElementsByTagName('form').length; i++){
+                if (i%2 == 0){
+                    document.write(document.getElementsByTagName('form')[i-1].name + ', ');
+                }
+            }
+
+        </script>
+    </div>
+</body>
+</html>

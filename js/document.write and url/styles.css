@@ -1,0 +1,25 @@
+form{
+    border: 2px solid black;
+    margin: 3%;
+    padding: 3%;
+}
+img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    float: left;
+    margin-top: 2px;
+}
+button{
+    padding: 5px;
+    border-radius: 10px;
+    background: darkgrey;
+}
+button:hover{
+    background: dimgrey;
+}
+button div{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}

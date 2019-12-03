@@ -1,0 +1,7 @@
+table {border: 1px solid grey;} 
+/* границы ячеек первого ряда таблицы */
+th {border: 1px solid grey;}
+/* границы ячеек тела таблицы */
+td {border: 1px solid grey;}
+
+table a.work:hover {border-bottom:1px dashed}

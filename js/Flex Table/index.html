@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="creation_form" id="editing_form_div" style="display: block">
+        <form id="creation_form">
+            <label>Количество строк  <input class="input" type="number" name="rows_number" id="rows_number" value="2"></label><br>
+            <label>Количесвто столбцов  <input class="input" type="number" name="cols_number" id="cols_number" value="3"></label><br>
+            <input class="button" type="button" value="Создать таблицу" onclick="Creation_Fun()">
+        </form>
+        <form style="display: none" id="editing_form">
+            <div class="editing">
+                <label><b>Изменение рамки:  </b>
+                    <label>Ширина (px)
+                        <input class="input" type="number" id="border_width" value="1" onchange="Border_Value()">
+                    </label>
+                    <label>Вид рамки
+                        <select id="border_style" onchange="Border_Value()">
+                            <option value="solid">
+                                сплошная линия
+                            </option>
+                            <option value="dotted">
+                                точки
+                            </option>
+                            <option value="dashed">
+                                тире
+                            </option>
+                                <option value="double">
+                                двойная
+                            </option>
+                        </select>
+                    </label>
+                </label>
+                <input type="button" style="display: block" value="Применить 1 px и рамка сплошная линия" id="border_button" onclick="border_change()">
+            </div>
+            <div class="editing">
+                <label><b>Заголовок:  </b><input id="new_header" type="text" value="Заголовк"></label>
+                <input type="button" style="display: block" value="Изменить" onclick="Header_Change()">
+            </div>
+            <div class="editing">
+                <label><b>Удалить строку:  </b><input id="delete_row" class="input" type="number"></label>
+                <input type="button" style="display: block" value="Удалить" onclick="Delete_row()">
+            </div>
+            <div class="editing">
+                <label><input type="button" value="**Magic**" onclick="Magic()"></label>
+            </div>
+        </form>
+    </div>
+    <div class="table" id="table_div" style="display: none">
+        <table cellpadding="10px">
+            <tbody id="table">
+                <tr id="table_header">
+                    <th id="th">
+                        Заголовок
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <input id="delete_button" type="button" value="удалить таблицу" style="display: none" onclick="delete_table()">
+    <script src="scripts.js"></script>
+</body>
+</html>
