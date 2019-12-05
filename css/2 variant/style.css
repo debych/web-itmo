@@ -1,0 +1,81 @@
+h1{
+    text-align: center;
+    margin-right: 7%;
+    margin-left: 7%;
+    font-size: 50px;
+    color: white;
+}
+
+h3{
+    color: grey;
+    font-size: 20px;
+}
+
+h2{
+    color: grey;
+    font-size: 25px;
+    width: 60%;
+    border-bottom: 2px solid grey;
+    padding-bottom: 5%;
+}
+
+p{
+    color: white;
+    font-size: 25px;
+}
+
+.page{
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.content{
+    background: linear-gradient(135deg, midnightblue, darkblue);
+    height: auto;
+    padding: 5% 5% 8% 5%;
+}
+
+.author_div{
+    #background-color: brown;
+    height: 90px;
+    width: auto;
+    #margin: 5%;
+    display: inline-block;
+    padding: 1px;
+}
+
+.author_img{
+    width: 64px;
+    height: 64px;
+}
+
+.author_name{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.bottom {
+    background-image: url(./images/soccer.jpeg);
+    #background-color: blue;
+    height: 20%;
+    background-repeat: no-repeat;
+    #width: auto;
+    background-size: 100% auto;
+    padding: 2%;
+}
+
+.bottom_text{
+    background-color: white;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-top: 40%;
+    padding: 1%;
+    width: 60%;
+}
+
+.bottom_text p{
+    color: black;
+    font-style: italic;
+    margin: 0;
+    font-size: 20px;
+}
